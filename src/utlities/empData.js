@@ -7,6 +7,7 @@ let employeeList = [
     mobileNum: "617-000-0002",
     SMS: "617-000-0002",
     email: "jtaylor@fakeemail.com",
+    address: {}
   },
   {
     firstName: "James",

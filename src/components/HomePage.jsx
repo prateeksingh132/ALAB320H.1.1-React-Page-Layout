@@ -2,12 +2,12 @@ import Header from "./Header.jsx";
 import SearchBar from "./SearchBar.jsx";
 import EmployeeList from "./EmployeeList.jsx";
 
-export default function HomePage() {
+export default function HomePage({ empList }) {
   return (
     <section>
       <Header />
       <SearchBar />
-      <EmployeeList />
+      <EmployeeList empList={empList} />
     </section>
   );
 }

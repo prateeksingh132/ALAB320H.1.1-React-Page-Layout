@@ -1,3 +1,4 @@
-export default function EmployeeListItem(){
-    return <li>EmployeeListItem</li>
+export default function EmployeeListItem({ firstName, lastName }) {
+  
+  return <li>{firstName} {lastName}</li>;
 }

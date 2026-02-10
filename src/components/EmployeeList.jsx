@@ -1,13 +1,14 @@
 import EmployeeListItem from "./EmployeeListItems.jsx";
-import employeeList from "../utlities/empData.js";
 
-export default function EmployeeList() {
+export default function EmployeeList({ empList }) {
 
-  let empList = employeeList.map((person) => <EmployeeListItem />)
+  // filter return
+  let filteredList = empList.filter((emp) => { return emp.jobTitle !== ''});
 
-  return (
-    <ul>
-      {empList}
-    </ul>
-  );
+  // Returns value for everyvalue in array in new array
+  let employeeList = filteredList.map((person, i ) => {
+    return <EmployeeListItem {...person} />;
+  });
+
+  return <ul>{employeeList}</ul>;
 }
