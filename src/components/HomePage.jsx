@@ -5,7 +5,7 @@ import EmployeeList from "./EmployeeList.jsx";
 export default function HomePage({ empList }) {
   return (
     <section>
-      <Header />
+      <Header>Employee Directory</Header>
       <SearchBar />
       <EmployeeList empList={empList} />
     </section>
