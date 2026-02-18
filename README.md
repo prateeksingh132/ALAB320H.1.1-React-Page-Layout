@@ -1,16 +1,22 @@
-# React + Vite
+# useContext
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- `createContext` - this allows us to create a context to share and provides the initial context value
+- `<Context.Provider>{children}</Context.Provider>` - xml like tag that allows us to provide a value to children components.
+  - Has to be used inside the `return` statment of a react component
+  - Has to be a parent to the components it wants to share its values with.
 
-Currently, two official plugins are available:
+# Using context for state MGMT and avoiding prop drilling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Always start with normal state, as program grows then consider context
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1.  create a contexts folder in your src
+2.  create a file for that specific context
+3.  Import `createContext` and create context to use
+    - `const EmployeeContext = createContext()`
+4.  created custom react component to provide context values.
+    - inside that component create state/functions/values/reducers you want to provide
+    - ` <EmployeeContext.Provider value={value}>
+  {children}
+</EmployeeContext.Provider>`
+5.  Wrapped custom componet around `<App/>`, within the main.jsx
+6.  In components that need context values import context and useContext hook
